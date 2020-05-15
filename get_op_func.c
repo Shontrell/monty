@@ -4,7 +4,7 @@
  * @op: opcode
  * Return: pointer to a function corresponding to the opcode
  */
-void (*get_op_func(line_t line, op_t *buf))(stack_t **stack, unsigned int linn)
+void (*get_op_func(char *op))(stack_t **stack, unsigned int linn)
 {
 	instruction_t opfun[] = {
 		{"push", push},
