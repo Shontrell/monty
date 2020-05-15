@@ -8,6 +8,8 @@ void push(stack_t **stack, unsigned int line_n)
 {
 	stack_t *element;
 
+	if (stack == NULL)
+		return (NULL);
 	element = malloc(sizeof(stack_t));
 	if (element == NULL)
 	{
@@ -21,7 +23,7 @@ void push(stack_t **stack, unsigned int line_n)
 		element->prev = NULL;
 		*stack = element;
 	}
-	element->n = line_n;
+	element->n = global;
 	element->next = *stack;
 	element->prev = NULL;
 }

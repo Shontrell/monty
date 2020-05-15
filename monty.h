@@ -32,6 +32,8 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+extern int global = 0;
+
 void free_stack(stack_t **head);
 void (*get_op_func(char *opcode))(stack_t **stack, unsigned int linn);
 void push(stack_t **stack, unsigned int line_number);
