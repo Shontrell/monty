@@ -18,7 +18,7 @@ void (*get_op_func(char *op))(stack_t **stack, unsigned int linn)
 
 	while (opfun[x].opcode)
 	{
-		if (strcmp(opfun[i].opcode, op) == 0)
+		if (strcmp(opfun[x].opcode, op) == 0)
 			break;
 		x++;
 	}
@@ -28,5 +28,5 @@ void (*get_op_func(char *op))(stack_t **stack, unsigned int linn)
 		free_stack(*stack);
 		return (NULL);
 	}
-	return (opfun[i].f);
+	return (opfun[x].f);
 }
