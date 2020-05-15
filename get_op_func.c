@@ -18,7 +18,7 @@ void (*get_op_func(char *op))(stack_t **stack, unsigned int linn)
 
 	while (opfun[x].opcode)
 	{
-		if (strcmp(opfun[i].opcode, line.tokenarray[0]) == 0)
+		if (strcmp(opfun[i].opcode, token) == 0)
 			break;
 		x++;
 	}
