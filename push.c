@@ -22,8 +22,17 @@ void push(stack_t **stack, unsigned int line_n)
 		element->next = *stack;
 		element->prev = NULL;
 		*stack = element;
+		return(*stack);
 	}
 	element->n = global;
+	if (stack.n == NULL)
+        {
+                fprintf(stderr, "L%u: usage: push integer\n", line_n);
+                free_stack(stack);
+                exit(EXIT_FAILURE);
+        }
 	element->next = *stack;
 	element->prev = NULL;
+	*stack = element;
+	return(*stack);
 }

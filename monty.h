@@ -29,14 +29,14 @@ typedef struct stack_s
 typedef struct instruction_s
 {
         char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+        void (*f)(stack_t **stack, unsigned int linn);
 } instruction_t;
 
 extern int global = 0;
 
 void free_stack(stack_t **head);
-void (*get_op_func(char *opcode))(stack_t **stack, unsigned int linn);
-void push(stack_t **stack, unsigned int line_number);
+void (*get_op_func(char *op))(stack_t **stack, unsigned int linn);
+void push(stack_t **stack, unsigned int line_n);
 void pall(stack_t **stack, unsigned int line_n);
 void pint(stack_t **stack, unsigned int line_n);
 void pop(stack_t **stack, unsigned int line_n);
