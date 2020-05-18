@@ -18,13 +18,13 @@ void push(stack_t **stack, unsigned int line_n)
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
-	if (*stack == NULL)
-	{
-		element->next = *stack;
-		element->prev = NULL;
-		*stack = element;
-	}
 	element->n = global;
+	if (*stack == NULL)
+        {
+                element->next = *stack;
+                element->prev = NULL;
+                *stack = element;
+        }
 	if (!element->n)
         {
                 fprintf(stderr, "L%u: usage: push integer\n", line_n);
