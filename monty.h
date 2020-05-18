@@ -32,7 +32,7 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int linn);
 } instruction_t;
 
-extern int global = 0;
+extern int global;
 
 void free_stack(stack_t **head);
 void (*get_op_func(char *op))(stack_t **stack, unsigned int linn);

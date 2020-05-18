@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 	char **token;
 	void (*f)(stack_t **, unsigned int);
 	stack_t *stack = NULL;
-		
+
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
@@ -28,13 +28,12 @@ int main(int argc, char **argv)
 	for (; getline(&buffer, &size, file) > 0; x++)
 	{
 		token[0] = strtok(buffer, " ");
-		f = get_op_func(token);
+		f = get_op_func(token[0]);
 		token[1] = strtok(NULL, " ");
 		global = atoi(token[1]);
 		f(&stack, x);
 	}
 	free(buffer);
-	free_stack(stack);
 	fclose(file);
 	return (EXIT_SUCCESS);
 }

@@ -24,8 +24,8 @@ void (*get_op_func(char *op))(stack_t **stack, unsigned int linn)
 	}
 	if (opfun[x].opcode == NULL)
 	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", linn, opcode);
-		free_stack(*stack);
+		fprintf(stderr, "unknown instruction %s\n",
+			opfun[x].opcode);
 		return (NULL);
 	}
 	return (opfun[x].f);

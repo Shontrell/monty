@@ -1,4 +1,5 @@
 #include "monty.h"
+int global = 0;
 /**
  * push - pushes an element to the stack
  * @stack: pointer to a pointer to the head of stack
@@ -9,7 +10,7 @@ void push(stack_t **stack, unsigned int line_n)
 	stack_t *element;
 
 	if (stack == NULL)
-		return (NULL);
+		return;
 	element = malloc(sizeof(stack_t));
 	if (element == NULL)
 	{
@@ -22,10 +23,9 @@ void push(stack_t **stack, unsigned int line_n)
 		element->next = *stack;
 		element->prev = NULL;
 		*stack = element;
-		return(*stack);
 	}
 	element->n = global;
-	if (stack.n == NULL)
+	if (!element->n)
         {
                 fprintf(stderr, "L%u: usage: push integer\n", line_n);
                 free_stack(stack);
@@ -34,5 +34,4 @@ void push(stack_t **stack, unsigned int line_n)
 	element->next = *stack;
 	element->prev = NULL;
 	*stack = element;
-	return(*stack);
 }
